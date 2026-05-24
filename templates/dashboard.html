@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>📞 Call Dashboard</title>
+
+    <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
+
+    <link rel="stylesheet" href="/static/style.css">
+
+</head>
+
+<body>
+
+<!-- HEADER -->
+<div class="header">
+
+    <div class="logo-section">
+         <div class="logo-box">
+            <img src="/static/logo.png" alt="Logo">
+         </div>
+
+        <h2>📞 CALL DASHBOARD</h2>
+
+    </div>
+
+</div>
+
+
+<!-- FILTERS -->
+<div class="dashboard">
+
+    <div class="top-controls">
+
+        <input type="date" id="from">
+
+        <input type="date" id="to">
+
+        <input type="text" id="ext" placeholder="Extension">
+
+        <input type="text" id="phone" placeholder="Phone Number">
+
+        <select id="type">
+
+            <option value="">All Types</option>
+
+            <option value="I">I</option>
+
+            <option value="O">O</option>
+
+            <option value="EXT">Ext</option>
+
+        </select>
+
+        <button onclick="filterData()">Search</button>
+
+        <button onclick="resetData()">Reset</button>
+
+        <button onclick="exportCSV()">CSV</button>
+
+        <button onclick="exportPDF()">PDF</button>
+
+        <button onclick="toggleTheme()" id="themeBtn">
+            🌙 Dark
+        </button>
+
+    </div>
+
+    <br>
+
+    <!-- TABLE -->
+    <table>
+
+        <thead>
+
+            <tr>
+
+                <th>ID</th>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Extension</th>
+                <th>Type</th>
+                <th>Number</th>
+                <th>Duration</th>
+
+            </tr>
+
+        </thead>
+
+        <tbody id="calls"></tbody>
+
+    </table>
+
+</div>
+
+
+<!-- FOOTER -->
+<div class="footer">
+     © 2026 Developed by <strong>Mr. C.K. Chiranjivi</strong> (IT EUS_Team Pipan). All rights reserved.
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.31/jspdf.plugin.autotable.min.js"></script>
+
+<script src="/static/script.js"></script>
+
+</body>
+</html>

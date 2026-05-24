@@ -1,0 +1,218 @@
+html, body {
+    height: 100%;
+}
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #f4f6f9;
+    margin: 0;
+    padding: 20px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+.header {
+    max-width: 1100px;
+    margin: auto;
+    margin-bottom: 15px;
+}
+
+.logo-section {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-box {
+    background: #f1f3f6;
+    padding: 8px 16px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo-box img {
+    height: 35px;
+    width: auto;
+}
+
+h2 {
+    margin: 0;
+    color: #333;
+}
+
+/* Dashboard */
+.dashboard {
+    flex: 1;
+    width: 100%;
+    background: #fff;
+
+    border-radius: 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+
+    padding: 20px;
+    overflow-y: auto;
+}
+.footer {
+    text-align: center;
+    padding: 12px;
+    font-size: 14px;
+    color: #ffffff;
+    background: #1f3b57;
+    border-top: 1px solid #163047;
+}
+
+.footer strong {
+    color: #007bff;
+}
+
+/* Table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+thead {
+    background: #007bff;
+    color: white;
+}
+
+th, td {
+    padding: 12px;
+    text-align: center;
+}
+
+tbody tr {
+    border-bottom: 1px solid #ddd;
+    transition: 0.3s;
+}
+
+tbody tr:hover {
+    background: #f1f1f1;
+}
+
+/* Call types */
+.incoming {
+    color: green;
+    font-weight: bold;
+}
+
+.outgoing {
+    color: orange;
+    font-weight: bold;
+}
+
+.missed {
+    color: red;
+    font-weight: bold;
+}
+
+/* Animation */
+.fade-in {
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(10px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+
+    th {
+        display: none;
+    }
+
+    td {
+        padding: 10px;
+        text-align: right;
+        position: relative;
+    }
+
+    td::before {
+        position: absolute;
+        left: 10px;
+        font-weight: bold;
+    }
+
+    td:nth-child(1)::before { content: "ID"; }
+    td:nth-child(2)::before { content: "Date"; }
+    td:nth-child(3)::before { content: "Time"; }
+    td:nth-child(4)::before { content: "Ext"; }
+    td:nth-child(5)::before { content: "Type"; }
+    td:nth-child(6)::before { content: "Number"; }
+    td:nth-child(7)::before { content: "Duration"; }
+}
+
+/* TOP CONTROLS */
+.top-controls{
+
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+}
+
+.top-controls input,
+.top-controls select{
+
+    padding:10px;
+    border:1px solid #ccc;
+    border-radius:6px;
+}
+
+.top-controls button{
+
+    padding:10px 15px;
+
+    border:none;
+
+    background:#007bff;
+
+    color:white;
+
+    border-radius:6px;
+
+    cursor:pointer;
+}
+
+.top-controls button:hover{
+
+    opacity:0.9;
+}
+
+
+/* DARK MODE */
+.dark body,
+body.dark{
+
+    background:#121212;
+    color:white;
+}
+
+body.dark .dashboard{
+
+    background:#1e1e1e;
+}
+
+body.dark table{
+
+    color:white;
+}
+
+body.dark tbody tr:hover{
+
+    background:#2b2b2b;
+}
+
+body.dark .footer{
+
+    background:#000;
+}
